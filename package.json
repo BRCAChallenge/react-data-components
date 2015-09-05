@@ -1,7 +1,7 @@
 {
-  "name": "react-data-components",
+  "name": "react-data-components-bd2k",
   "version": "0.5.0",
-  "description": "React data components",
+  "description": "React data components with bd2k fixes",
   "keywords": [
     "pagination",
     "react",
@@ -19,7 +19,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/carlosrocha/react-data-components"
+    "url": "https://github.com/BD2KGenomics/react-data-components"
   },
   "babel": {
     "stage": 0
