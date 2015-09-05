@@ -42,6 +42,7 @@ export default class Table {
   static defaultProps = {
     buildRowOptions: () => ({}),
     sortBy: {},
+    buildHeader: title => <span>{title}</span>
   };
 
   static propTypes = {
@@ -104,7 +105,7 @@ export default class Table {
   }
 
   render() {
-    let { columns, keys, buildRowOptions, sortBy, onSort } = this.props;
+    let { buildHeader, columns, keys, buildRowOptions, sortBy, onSort } = this.props;
 
     let headers = columns.map((col, idx) => {
       let sortProps, order;
@@ -124,7 +125,7 @@ export default class Table {
           role="columnheader"
           scope="col"
           {...sortProps}>
-          <span>{col.title}</span>
+          {buildHeader(col.title)}
           {typeof order != 'undefined' ?
             <span className={`sort-icon sort-${order}`} aria-hidden="true" /> :
             null}
