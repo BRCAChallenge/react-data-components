@@ -7,11 +7,12 @@ var containsIgnoreCase = function(a, b) {
 };
 
 function buildInitialState(props) {
+  var {initialData, filters, filterValues = {}, initialSortBy} = props;
   return {
     // Clone the initialData.
-    data: props.initialData.slice(0),
-    sortBy: props.initialSortBy,
-    filterValues: {},
+    data: sort(initialSortBy, filter(filters, filterValues, initialData)),
+    sortBy: initialSortBy,
+    filterValues: filterValues,
     currentPage: 0,
     pageLength: props.initialPageLength,
   };
