@@ -48,7 +48,7 @@ function filterPass(filters, data) {
     var partial = filterDef.filter.bind(null, filterValue);
     if (!filterDef.prop) {
       // Filter is for all properties
-      return some(each => partial(each), data);
+      return some(partial, data);
     } else {
       // Filter is for one property
       return partial(data[filterDef.prop]);
