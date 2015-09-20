@@ -7,7 +7,7 @@ var containsIgnoreCase = function(a, b) {
 };
 
 function buildInitialState(props) {
-  var {initialData, filter, filters, filterValues = {}, initialSortBy} = props;
+  var {initialData, filter, filters, filterValues = {}, initialSortBy, sort} = props;
   return {
     // Clone the initialData.
     data: sort(initialSortBy, filter(filters, filterValues, initialData)),
@@ -26,6 +26,7 @@ module.exports = {
 
   getDefaultProps() {
     return {
+      sort: sort,
       filter: filter,
       initialPageLength: 10,
       pageLengthOptions: [ 5, 10, 20 ],
@@ -43,13 +44,15 @@ module.exports = {
 
   componentWillMount() {
     // Do the initial sorting if specified.
-    var {sortBy, data} = this.state;
+    var {sortBy, data} = this.state,
+        {sort} = this.props;
     if (sortBy) {
       this.setState({ data: sort(sortBy, data) });
     }
   },
 
   onSort(sortBy) {
+    var {sort} = this.props;
     this.setState({
       sortBy: sortBy,
       data: sort(sortBy, this.state.data),
@@ -58,7 +61,7 @@ module.exports = {
 
   onFilter(filterName, filterValue) {
     var {filterValues, sortBy} = this.state;
-    var {initialData, filter, filters} = this.props;
+    var {initialData, filter, filters, sort} = this.props;
 
     filterValues[filterName] = filterValue;
     var newData = filter(filters, filterValues, initialData);
