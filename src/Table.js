@@ -1,4 +1,5 @@
-import React, { PropTypes } from 'react';
+import PropTypes from 'prop-types';
+import React from 'react';
 
 let simpleGet = key => data => data[key];
 let keyGetter = keys => data => keys.map(key => data[key]);
