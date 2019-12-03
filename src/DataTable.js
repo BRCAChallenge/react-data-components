@@ -1,4 +1,5 @@
 var React = require('react');
+var createReactClass = require('create-react-class');
 var Table = require('./Table');
 var Pagination = require('./Pagination');
 var SelectField = require('./SelectField');
@@ -6,8 +7,8 @@ var SearchField = require('./SearchField');
 
 var DataMixin = require('./DataMixin');
 
-var DataTable = React.createClass({
-
+var DataTable = createReactClass({
+  displayName: 'DataTable',
   mixins: [ DataMixin ],
 
   render() {
