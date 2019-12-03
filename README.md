@@ -1,6 +1,6 @@
-# react-data-components
+# react-data-components-brcaex
 
-[![Build Status](https://travis-ci.org/carlosrocha/react-data-components.svg?branch=master)](https://travis-ci.org/carlosrocha/react-data-components)
+[![Build Status](https://travis-ci.org/carlosrocha/react-data-components-brcaex.svg?branch=master)](https://travis-ci.org/carlosrocha/react-data-components-brcaex)
 
 DataTable: [Live demo and source](https://jsbin.com/ziyawu/9/edit?js,output)
 
@@ -9,7 +9,7 @@ SelectableTable: [Live demo and source](https://jsbin.com/yokara/edit?js,output)
 ## Getting started
 
 ```sh
-npm install react-data-components --save
+npm install react-data-components-brcaex --save
 ```
 
 ### Using the default implementation
@@ -19,7 +19,7 @@ pagination and page size.
 
 ```javascript
 var React = require('react');
-var DataTable = require('react-data-components').DataTable;
+var DataTable = require('react-data-components-brcaex').DataTable;
 
 var columns = [
   { title: 'Name', prop: 'name'  },
