@@ -1,6 +1,6 @@
 {
   "name": "react-data-components-bd2k",
-  "version": "0.5.3",
+  "version": "0.5.4",
   "description": "React data components with bd2k fixes",
   "keywords": [
     "pagination",
@@ -19,13 +19,13 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/BD2KGenomics/react-data-components"
+    "url": "https://github.com/BRCAChallenge/react-data-components"
   },
   "babel": {
     "stage": 0
   },
   "peerDependencies": {
-    "react": "^0.13.0"
+    "react": "^0.15.0"
   },
   "devDependencies": {
     "babel": "^5.8.21",
@@ -56,5 +56,10 @@
     "unmockedModulePathPatterns": [
       "<rootDir>/node_modules/react"
     ]
+  },
+  "dependencies": {
+    "create-react-class": "^15.6.3",
+    "prop-types": "^15.7.2",
+    "react-dom": "^15.6.2"
   }
 }
