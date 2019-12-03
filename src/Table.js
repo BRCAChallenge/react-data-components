@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import React from 'react';
+import React, {Component} from 'react';
 
 let simpleGet = key => data => data[key];
 let keyGetter = keys => data => keys.map(key => data[key]);
@@ -38,7 +38,7 @@ function buildSortProps(col, sortBy, onSort) {
   };
 }
 
-export default class Table {
+export default class Table extends Component {
 
   static defaultProps = {
     buildRowOptions: () => ({}),
@@ -90,7 +90,8 @@ export default class Table {
     onSort: PropTypes.func,
   };
 
-  constructor() {
+  constructor(props) {
+    super(props);
     this._headers = [];
   }
 

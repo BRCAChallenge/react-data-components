@@ -1,10 +1,10 @@
 import PropTypes from 'prop-types';
-import React from 'react';
+import React, {Component} from 'react';
 
 // Used to cancel events.
 var preventDefault = e => e.preventDefault();
 
-export default class Pagination {
+export default class Pagination extends Component {
 
   static defaultProps = {
     showPages: 5,
